@@ -1,0 +1,32 @@
+git:
+  commitPrefixes:
+    zazar: # This is repository folder name
+      pattern: "^\\w+\\/(\\w+-\\w+).*"
+      replace: '$1 '
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never -s
+gui:
+  showIcons: true
+os:
+  editPreset: ''
+  edit: 'lvim {{filename}}'
+  editAtLine: 'lvim --line={{line}} {{filename}}'
+  editAtLineAndWait: 'lvim --block --line={{line}} {{filename}}'
+  editInTerminal: true
+customCommands:
+  - key: 'b'
+    prompts:
+      - type: 'menu'
+        title: 'What kind of branch is it? (from {{ index .SelectedLocalBranch.Name }})'
+        options:
+          - name: 'development'
+            value: 'development'
+          - name: 'feature'
+            value: 'feature'
+      - type: 'input'
+        title: 'What is the {{index .PromptResponses 0}} name?'
+        initialValue: ''
+    command: "git checkout -b {{index .PromptResponses 0}}/{{index .PromptResponses 1}}"
+    context: 'localBranches'
+    loadingText: 'creating branch'
