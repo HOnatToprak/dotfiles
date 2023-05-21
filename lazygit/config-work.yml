@@ -1,6 +1,12 @@
 git:
   commitPrefixes:
-    zazar: # This is repository folder name
+    zazar:
+      pattern: "^\\w+\\/(\\w+-\\w+).*"
+      replace: '$1 '
+    wholive_project:
+      pattern: "^\\w+\\/(\\w+-\\w+).*"
+      replace: '$1 '
+    who_deployment:
       pattern: "^\\w+\\/(\\w+-\\w+).*"
       replace: '$1 '
   paging:
