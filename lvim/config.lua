@@ -18,12 +18,12 @@ if not is_work then
       name = "prettier",
     },
   }
-
-  local linters = require "lvim.lsp.null-ls.linters"
-  linters.setup {
-    { name = "eslint" },
-  }
 end
+
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup {
+  { name = "eslint" },
+}
 
 lvim.use_icons = true
 
