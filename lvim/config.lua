@@ -38,16 +38,16 @@ lvim.builtin.which_key.mappings["<leader>"] = {
 }
 lvim.builtin.which_key.mappings["f"] = {}
 
-lvim.builtin.which_key.mappings["sw"] = {"<cmd>Telescope grep_string<cr>", "word"}
-lvim.builtin.which_key.vmappings["lf"] = {"<cmd>lua vim.lsp.buf.format()<cr>", "format"}
+lvim.builtin.which_key.mappings["sw"] = { "<cmd>Telescope grep_string<cr>", "word" }
+lvim.builtin.which_key.vmappings["lf"] = { "<cmd>lua vim.lsp.buf.format()<cr>", "format" }
 
 lvim.lsp.buffer_mappings.normal_mode["]d"] = lvim.builtin.which_key.mappings["l"]["j"]
 lvim.lsp.buffer_mappings.normal_mode["[d"] = lvim.builtin.which_key.mappings["l"]["k"]
 
-lvim.lsp.buffer_mappings.normal_mode["gd"] = {"<cmd>Telescope lsp_definitions<cr>", "Go to definition"}
-lvim.lsp.buffer_mappings.normal_mode["gi"] = {"<cmd>Telescope lsp_implementations<cr>", "Go to implementations"}
+lvim.lsp.buffer_mappings.normal_mode["gd"] = { "<cmd>Telescope lsp_definitions<cr>", "Go to definition" }
+lvim.lsp.buffer_mappings.normal_mode["gi"] = { "<cmd>Telescope lsp_implementations<cr>", "Go to implementations" }
 lvim.lsp.buffer_mappings.normal_mode["gI"] = nil
-lvim.lsp.buffer_mappings.normal_mode["gr"] = {"<cmd>Telescope lsp_references<cr>", "Go to references"}
+lvim.lsp.buffer_mappings.normal_mode["gr"] = { "<cmd>Telescope lsp_references<cr>", "Go to references" }
 
 lvim.builtin.which_key.mappings["l"]["j"] = {}
 lvim.builtin.which_key.mappings["l"]["k"] = {}
@@ -96,49 +96,6 @@ lvim.plugins = {
       })
     end
   },
-  {
-    "chrisgrieser/nvim-spider",
-    keys = {
-      { "w",  "<cmd>lua require('spider').motion('w')<CR>",  mode = { "n", "o", "x" }, desc = "Spider-w" },
-      { "e",  "<cmd>lua require('spider').motion('e')<CR>",  mode = { "n", "o", "x" }, desc = "Spider-e" },
-      { "b",  "<cmd>lua require('spider').motion('b')<CR>",  mode = { "n", "o", "x" }, desc = "Spider-b" },
-      { "ge", "<cmd>lua require('spider').motion('ge')<CR>", mode = { "n", "o", "x" }, desc = "Spider-ge" },
-    }
-  },
-  {
-    "chrisgrieser/nvim-various-textobjs",
-    config = true,
-    keys = {
-      {
-        "aw",
-        "<cmd>lua require('various-textobjs').subword(false)<CR>",
-        mode = { "o", "x" },
-        desc =
-        "a word plus"
-      },
-      {
-        "iw",
-        "<cmd>lua require('various-textobjs').subword(true)<CR>",
-        mode = { "o", "x" },
-        desc =
-        "inner word plus"
-      },
-      {
-        "ai",
-        "<cmd>lua require('various-textobjs').indentation(false, false)<CR>",
-        mode = { "o", "x" },
-        desc =
-        "a indent plus"
-      },
-      {
-        "ii",
-        "<cmd>lua require('various-textobjs').indentation(true, true)<CR>",
-        mode = { "o", "x" },
-        desc =
-        "inner indent plus"
-      },
-    }
-  }
 }
 
 lvim.builtin.which_key.mappings["t"] = {
